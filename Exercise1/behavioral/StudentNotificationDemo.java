@@ -1,3 +1,5 @@
+package Exercise1.behavioral;
+
 import java.util.ArrayList;
 import java.util.List;
 
