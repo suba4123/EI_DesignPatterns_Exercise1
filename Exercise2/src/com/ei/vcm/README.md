@@ -53,7 +53,41 @@ This project highlights:
 - L – Liskov Substitution: Any `Notifier` implementation can replace another seamlessly.  
 - I – Interface Segregation: Lean `Notifier` interface.  
 - D – Dependency Inversion: High-level modules depend on abstractions, not details.  
+java -cp bin com.ei.vcm.App
+1. Start the Application
+Command to run:
+java -cp src com.ei.vcm.manager.App
+Description: Launches the Virtual Classroom Manager in the terminal.
+Execution Snapshot:![alt text](image.png)
+
+2. Create a New Classroom
+Action: Enter classroom details 
+Execution Snapshot:![alt text](images/imagecreate.png)
+
+3. Enroll Students
+Action: Add students to the created classroom.
+
+
+Execution Snapshot:![alt text](images/imageenroll.png)
 
 
 
+4. Schedule Assignments
+Action: Add assignments with deadlines.
 
+
+Execution Snapshot:![alt text](images/imageassignment.png)
+
+
+5. Listing Classrooms When No Classrooms Are Available
+
+Action: Try to view all classrooms when none exist.
+
+Execution Snapshot:![alt text](images/imageclassnotfound.png)
+
+
+6. Duplicate Classroom Creation
+
+Action: Try creating a classroom with the same name twice.
+
+Execution Snapshot:![alt text](images/imageduplication.png)

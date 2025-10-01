@@ -8,6 +8,7 @@ import com.ei.vcm.notification.ConsoleNotifier;
 import com.ei.vcm.notification.Notifier;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -34,6 +35,27 @@ public class ClassroomManager {
         classrooms.put(name, EntityFactory.createClassroom(name));
         logger.info("Classroom created: " + name);
     }
+    public void viewStudents(String className) {
+    Classroom c = classrooms.get(className);
+
+    // Check if classroom exists
+    if (c == null) {
+        logger.warning("Classroom not found: " + className);
+        return;
+    }
+
+    // Get students list
+    List<Student> students = c.listStudents();
+
+    // Handle empty class
+    if (students.isEmpty()) {
+        logger.warning("No students enrolled in class: " + className);
+        return;
+    }
+
+  
+}
+
 
     public void addStudent(String id, String name, String className) {
         Classroom c = classrooms.get(className);

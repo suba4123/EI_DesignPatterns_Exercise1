@@ -47,14 +47,13 @@ public class App {
                     case "submit_assignment":
                         manager.submitAssignment(parts[1], parts[2], parts[3]);
                         break;
-                    case "view_students": {
-                        Classroom c = manager.getClassroom(parts[1]);
-                        if (c != null) {
-                            for (Student s : c.listStudents())
-                                System.out.println(s.getId() + " - " + s.getName());
+                    case "view_students":
+                        if (parts.length < 2) {
+                            System.out.println("Usage: view_students <class>");
+                        } else {
+                            manager.viewStudents(parts[1]);  
                         }
                         break;
-                    }
                     case "view_assignments": {
                         Classroom c = manager.getClassroom(parts[1]);
                         if (c != null) {
