@@ -53,8 +53,13 @@ public class ClassroomManager {
         return;
     }
 
-  
+    // ✅ Log students info
+    logger.info("Students in " + className + ":");
+    for (Student s : students) {
+        logger.info(" - " + s.getId() + " | " + s.getName());
+    }
 }
+
 
 
     public void addStudent(String id, String name, String className) {

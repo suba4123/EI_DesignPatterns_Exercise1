@@ -62,6 +62,7 @@ public class App {
                         }
                         break;
                     }
+                    
                     case "remove_classroom":
                          manager.removeClassroom(parts[1]);
                          break;
