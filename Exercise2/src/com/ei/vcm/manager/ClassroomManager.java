@@ -86,6 +86,14 @@ public class ClassroomManager {
         logger.info("Assignment submitted by " + studentId + " for " + className + " -> " + assignmentTitle);
         notifier.notifyAllInClass(className, "Student " + s.getName() + " submitted " + assignmentTitle);
     }
+    public void removeClassroom(String name) {
+    if (!classrooms.containsKey(name)) {
+        throw new IllegalArgumentException("Classroom not found: " + name);
+    }
+    classrooms.remove(name);
+    logger.info("Classroom removed: " + name);
+}
+
 
     public Classroom getClassroom(String name) { return classrooms.get(name); }
 }

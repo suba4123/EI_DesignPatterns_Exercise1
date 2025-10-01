@@ -32,6 +32,7 @@ public class App {
                         System.out.println(" submit_assignment <id> <class> <title>");
                         System.out.println(" view_students <class>");
                         System.out.println(" view_assignments <class>");
+                        System.out.println(" remove_classroom <name>");
                         System.out.println(" exit");
                         break;
                     case "add_classroom":
@@ -62,6 +63,10 @@ public class App {
                         }
                         break;
                     }
+                    case "remove_classroom":
+                         manager.removeClassroom(parts[1]);
+                         break;
+
                     case "exit":
                         System.out.println("Goodbye!");
                         return;
