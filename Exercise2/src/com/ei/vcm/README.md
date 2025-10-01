@@ -58,7 +58,7 @@ java -cp bin com.ei.vcm.App
 Command to run:
 java -cp src com.ei.vcm.manager.App
 Description: Launches the Virtual Classroom Manager in the terminal.
-Execution Snapshot:![alt text](image.png)
+Execution Snapshot:![alt text](images/imagelistcommands.png)
 
 2. Create a New Classroom
 Action: Enter classroom details 
