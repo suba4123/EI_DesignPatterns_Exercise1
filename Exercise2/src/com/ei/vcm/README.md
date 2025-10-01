@@ -33,26 +33,28 @@ This project highlights:
 - Broadcast assignment updates to the whole class  
 
  🛡️ Error Handling & Logging  
-- Custom Exceptions: `EntityNotFoundException`, `ValidationException`  
-- Logging: Key actions logged using `java.util.logging`  
+- Custom Exceptions: EntityNotFoundException, ValidationException  
+- Logging: Key actions logged using java.util.logging 
 
 ---
 
  🧩 Design Patterns  
 
-1. Singleton – `ClassroomManager` ensures only one instance manages the system.  
-2. Factory – `EntityFactory` centralizes creation of `Classroom`, `Student`, and `Assignment`.  
-3. Observer-style – `Notifier` & `ConsoleNotifier` decouple notifications from core logic, allowing future extension (e.g., Email/SMS).  
+1. Singleton – ClassroomManager ensures only one instance manages the system.  
+2. Factory – EntityFactory centralizes creation of Classroom, Student, and Assignment.  
+3. Observer-style – Notifier & ConsoleNotifier decouple notifications from core logic, allowing future extension (e.g., Email/SMS).  
 
 ---
 
  🧩 SOLID Principles in Action  
 
-- S – Single Responsibility: Each class (`Student`, `Classroom`, etc.) has one role.  
+- S – Single Responsibility: Each class (Student, Classroom, etc.) has one role.  
 - O – Open/Closed: Extend with new notifiers or features without changing core logic.  
-- L – Liskov Substitution: Any `Notifier` implementation can replace another seamlessly.  
-- I – Interface Segregation: Lean `Notifier` interface.  
-- D – Dependency Inversion: High-level modules depend on abstractions, not details.  
+- L – Liskov Substitution: Any Notifier implementation can replace another seamlessly.  
+- I – Interface Segregation: Lean Notifier interface.  
+- D – Dependency Inversion: High-level modules depend on abstractions, not details.
+
+
 
 
 
