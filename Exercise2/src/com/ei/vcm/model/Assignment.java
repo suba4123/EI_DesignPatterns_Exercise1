@@ -20,19 +20,33 @@ public class Assignment {
     public String getDueDate() { return dueDate; }
 
     // Add a student to track submission
-    public void addStudent(String studentName) {
-        submissions.put(studentName, false);
-    }
+   
+public void addStudent(String studentId) {
+    submissions.put(studentId, false);
+}
 
-    // Mark a student as submitted
-    public void markSubmitted(String studentName) {
-        if (submissions.containsKey(studentName)) {
-            submissions.put(studentName, true);
-        }
+// Mark a student as submitted using student ID
+public void markSubmitted(String studentId) {
+    if (submissions.containsKey(studentId)) {
+        submissions.put(studentId, true);
     }
+}
+
 
     // Get submission status
     public Map<String, Boolean> getSubmissions() {
         return submissions;
     }
+    // Get only completed submissions
+    public Map<String, Boolean> getCompletedSubmissions() {
+    Map<String, Boolean> completed = new HashMap<>();
+    for (Map.Entry<String, Boolean> entry : submissions.entrySet()) {
+        if (entry.getValue()) {
+            completed.put(entry.getKey(), true);
+        }
+    }
+    return completed;
+}
+
+
 }

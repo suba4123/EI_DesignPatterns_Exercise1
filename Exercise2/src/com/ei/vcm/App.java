@@ -32,6 +32,7 @@ public class App {
                         System.out.println(" submit_assignment <id> <class> <title>");
                         System.out.println(" view_students <class>");
                         System.out.println(" view_assignments <class>");
+                        System.out.println(" view_submissions <class> <assignment>");
                         System.out.println(" remove_classroom <name>");
                         System.out.println(" exit");
                         break;
@@ -66,6 +67,10 @@ public class App {
                     case "remove_classroom":
                          manager.removeClassroom(parts[1]);
                          break;
+                    case "view_submissions":
+                        manager.listCompletedSubmissions(parts[1], parts[2]);
+                        break;
+
 
                     case "exit":
                         System.out.println("Goodbye!");

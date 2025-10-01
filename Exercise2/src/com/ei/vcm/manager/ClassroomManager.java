@@ -90,7 +90,13 @@ public class ClassroomManager {
         } else {
             logger.warning("Assignment already exists: " + title);
         }
+        //chage here
+        for (Student s : c.listStudents()) {
+    a.addStudent(s.getId()); // use ID, not name
+}
+
     }
+    
 
     // ➡️ New: Submit assignment
     public void submitAssignment(String studentId, String className, String assignmentTitle) {
@@ -112,6 +118,8 @@ public class ClassroomManager {
         s.markSubmitted(assignmentTitle);
         logger.info("Assignment submitted by " + studentId + " for " + className + " -> " + assignmentTitle);
         notifier.notifyAllInClass(className, "Student " + s.getName() + " submitted " + assignmentTitle);
+    a.markSubmitted(s.getId()); // use ID
+
     }
     public void removeClassroom(String name) {
     if (!classrooms.containsKey(name)) {
@@ -120,6 +128,31 @@ public class ClassroomManager {
     classrooms.remove(name);
     logger.info("Classroom removed: " + name);
 }
+public void listCompletedSubmissions(String className, String assignmentTitle) {
+    Classroom c = classrooms.get(className);
+    if (c == null) {
+        logger.warning("Classroom not found: " + className);
+        return;
+    }
+
+    Assignment a = c.getAssignment(assignmentTitle);
+    if (a == null) {
+        logger.warning("Assignment not found: " + assignmentTitle);
+        return;
+    }
+
+    Map<String, Boolean> completed = a.getCompletedSubmissions();
+    if (completed.isEmpty()) {
+        logger.info("No submissions completed for '" + assignmentTitle + "'.");
+        return;
+    }
+
+    logger.info("Completed submissions for '" + assignmentTitle + "':");
+    for (String studentName : completed.keySet()) {
+        logger.info(" - " + studentName);
+    }
+}
+
 
 
     public Classroom getClassroom(String name) { return classrooms.get(name); }
