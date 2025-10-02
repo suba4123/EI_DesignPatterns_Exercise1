@@ -26,7 +26,7 @@ This project highlights:
  📑 Assignment Management  
 - Schedule assignments with deadlines  
 - Submit assignments by students  
-- Track submission status  
+- Track submission status (NEW)
 
  📢 Notifications  
 - Notify students when enrolled  
@@ -52,13 +52,14 @@ This project highlights:
 - O – Open/Closed: Extend with new notifiers or features without changing core logic.  
 - L – Liskov Substitution: Any `Notifier` implementation can replace another seamlessly.  
 - I – Interface Segregation: Lean `Notifier` interface.  
-- D – Dependency Inversion: High-level modules depend on abstractions, not details.  
+- D – Dependency Inversion: High-level modules depend on abstractions, not details. 
+ 
 java -cp bin com.ei.vcm.App
 1. Start the Application
 Command to run:
 java -cp src com.ei.vcm.manager.App
 Description: Launches the Virtual Classroom Manager in the terminal.
-Execution Snapshot:![alt text](images/imagelistcommands.png)
+Execution Snapshot:![alt text](images/imagelistcommand.png)
 
 2. Create a New Classroom
 Action: Enter classroom details 
